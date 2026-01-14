@@ -262,25 +262,29 @@
 
         <!-- Второй экран -->
         <div id="sc2" class="screen">
-            <h1 style="color: var(--pink);">Тоді вам так</h1>
+            <div style="position: absolute; top: 8%; width: 100%; text-align: center;">
+                <h1 style="color: var(--pink);">Тоді вам так</h1>
+            </div>
             
             <div class="nadia-fancy nadia-1">Надя</div>
             <div class="nadia-fancy nadia-2">Надя</div>
             <div class="nadia-fancy nadia-3">Надя</div>
 
-            <div class="rose-box">
-                <svg viewBox="0 0 100 120" style="width: 100%; height: 100%;">
-                    <path fill="none" stroke="var(--neon-green)" stroke-width="4" d="M50,110 Q50,85 50,65 M50,90 Q30,80 25,65 Q40,75 50,80" />
-                    <path fill="none" stroke="var(--neon-red)" stroke-width="5" d="M50,65 C70,65 80,35 50,15 C20,35 30,65 50,65 M50,55 C60,45 60,35 50,35 C40,35 40,45 50,55" />
-                </svg>
-            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding-top: 60px;">
+                <div class="rose-box" style="margin-bottom: 20px;">
+                    <svg viewBox="0 0 100 120" style="width: 100%; height: 100%;">
+                        <path fill="none" stroke="var(--neon-green)" stroke-width="4" d="M50,110 Q50,85 50,65 M50,90 Q30,80 25,65 Q40,75 50,80" />
+                        <path fill="none" stroke="var(--neon-red)" stroke-width="5" d="M50,65 C70,65 80,35 50,15 C20,35 30,65 50,65 M50,55 C60,45 60,35 50,35 C40,35 40,45 50,55" />
+                    </svg>
+                </div>
 
-            <div style="z-index: 20; display: flex; flex-direction: column; align-items: center; margin-top: 30px;">
-                <p style="font-size: clamp(1.3rem, 3vw, 1.8rem); margin-bottom: 15px; text-shadow: 0 0 20px white;">Введи число</p>
-                <input type="number" id="numInput">
-                <div style="display: flex; gap: 15px; margin-top: 10px;">
-                    <button class="btn" onclick="check()">ОК</button>
-                    <button class="btn" onclick="askHint()" style="background: linear-gradient(135deg, #ff66b2, #ff3399);">💡 Подсказка</button>
+                <div style="z-index: 20; display: flex; flex-direction: column; align-items: center;">
+                    <p style="font-size: clamp(1.3rem, 3vw, 1.8rem); margin-bottom: 15px; text-shadow: 0 0 20px white;">Введи число</p>
+                    <input type="number" id="numInput">
+                    <div style="display: flex; gap: 15px; margin-top: 10px; flex-wrap: wrap; justify-content: center;">
+                        <button class="btn" onclick="check()">ОК</button>
+                        <button class="btn" onclick="askHint()" style="background: linear-gradient(135deg, #ff66b2, #ff3399);">💡 Подсказка</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -323,9 +327,9 @@
 
     <!-- Музыкальный плеер -->
     <audio id="bgMusic" loop></audio>
-    <div id="musicControl" style="position: fixed; bottom: 15px; right: 15px; z-index: 2000; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); padding: 8px 12px; border-radius: 25px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
-        <button id="musicBtn" onclick="toggleMusic()" style="background: linear-gradient(135deg, var(--gold), #ffaa00); border: none; padding: 6px 14px; border-radius: 15px; cursor: pointer; font-weight: bold; font-size: 0.75rem; white-space: nowrap;">▶️ 🎵</button>
-        <input type="range" id="volumeSlider" min="0" max="100" value="40" oninput="changeVolume(this.value)" style="width: 60px; height: 4px;">
+    <div id="musicControl" style="position: fixed; top: 10px; right: 10px; z-index: 2000; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); padding: 4px 8px; border-radius: 15px; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.4);">
+        <button id="musicBtn" onclick="toggleMusic()" style="background: linear-gradient(135deg, var(--gold), #ffaa00); border: none; padding: 4px 10px; border-radius: 12px; cursor: pointer; font-weight: bold; font-size: 0.65rem; white-space: nowrap; line-height: 1;">▶️🎵</button>
+        <input type="range" id="volumeSlider" min="0" max="100" value="40" oninput="changeVolume(this.value)" style="width: 50px; height: 3px;">
     </div>
 
     <script>
